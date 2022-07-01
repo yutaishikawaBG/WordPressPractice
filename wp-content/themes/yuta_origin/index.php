@@ -63,7 +63,7 @@
                         <p class="post-meta">
                             Posted by
                             <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                            on <?php the_time("Y年n月j日l"); ?>
                         </p>
                     </div>
                     <!-- Divider-->
@@ -152,5 +152,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <?php wp_footer(); ?>
     </body>
 </html>
