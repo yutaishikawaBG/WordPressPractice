@@ -63,6 +63,16 @@
                     <div class="row gx-4 gx-lg-5 justify-content-center">
                         <div class="col-md-10 col-lg-8 col-xl-7">
                             <?php the_content(); ?>
+                            <dl>
+                                <?php
+                                $price = get_post_meta(get_the_ID(),'価格',true);
+                                $publisher =  get_post_meta(get_the_ID(),'発売日',true);
+                                ?>
+                                <dt>価格</dt>
+                                <dd><?php echo $price; ?></dd>
+                                <dt>発売日</dt>
+                                <dd><?php echo $publisher; ?></dd>
+                            </dl>
                         </div>
                     </div>
                 </div>
