@@ -15,6 +15,15 @@ function init_func(){
             'menu_icon' => ''
         ]
     );
+
+    register_taxonomy('item_category','item',
+        [
+            'labels' => [
+                'name' => '商品カテゴリー',
+            ],
+            'hierarchical' => true,
+        ]
+    );
 }
 add_action('init','init_func');
 ?>
