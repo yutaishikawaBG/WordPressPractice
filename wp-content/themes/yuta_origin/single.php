@@ -64,14 +64,10 @@
                         <div class="col-md-10 col-lg-8 col-xl-7">
                             <?php the_content(); ?>
                             <dl>
-                                <?php
-                                $price = get_post_meta(get_the_ID(),'価格',true);
-                                $publisher =  get_post_meta(get_the_ID(),'発売日',true);
-                                ?>
                                 <dt>価格</dt>
-                                <dd><?php echo $price; ?></dd>
+                                <dd><?php echo number_format(get_field('価格')); ?></dd>
                                 <dt>発売日</dt>
-                                <dd><?php echo $publisher; ?></dd>
+                                <dd><?php the_field('発売日'); ?></dd>
                             </dl>
                         </div>
                     </div>
