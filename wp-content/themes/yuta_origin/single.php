@@ -17,7 +17,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -32,56 +32,39 @@
                 </div>
             </div>
         </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Clean Blog</h1>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+
+        <?php while(have_posts()):the_post(); ?>
+
+            <!-- Page Header-->
+            <header class="masthead" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/post-bg.jpg')">
+                <div class="container position-relative px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="post-heading">
+                                <h1><?php the_title(); ?></h1>
+                                <span class="meta">
+                                    Posted by
+                                    <?php the_author(); ?>
+                                    on <?php the_time("Y年n月j日l"); ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-
-                    
-                    <?php while(have_posts()):the_post(); ?>
-                        <!-- Post preview-->
-                        <div class="post-preview">
-                            <a href="<?php the_permalink(); ?>">
-                                <h2 class="post-title">
-                                    <?php the_title(); ?>
-                                </h2>
-                                <h3 class="post-subtitle">
-                                    <?php the_excerpt(); ?>
-                                </h3>
-                            </a>
-                            <p class="post-meta">
-                                Posted by
-                                <?php the_author(); ?>
-                                on <?php the_time("Y年n月j日l"); ?>
-                            </p>
+            </header>
+            <!-- Post Content-->
+            <article class="mb-4">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <?php the_content(); ?>
                         </div>
-                        <!-- Divider-->
-                        <hr class="my-4" />
-                    <?php endwhile; ?>
-
-
-                   
-                    <!-- Pager-->
-                    <?php echo paginate_links(); ?>
-                    <br/>
-                    <?php previous_posts_link(); ?>
-                    <?php next_posts_link(); ?>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </article>
+
+        <?php endwhile; ?>
+
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -122,7 +105,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
-
         <?php wp_footer(); ?>
     </body>
 </html>
