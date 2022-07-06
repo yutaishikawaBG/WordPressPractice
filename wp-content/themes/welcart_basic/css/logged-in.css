@@ -1,0 +1,54 @@
+
+
+/* = WP5.8 Style - widgets-php
+-------------------------------------------------------------- */
+
+body.logged-in.sticky-menu {
+	background: #fff;
+	color: #333;
+	border: none;
+}
+body.logged-in.sticky-menu a {
+	color: #333;
+}
+body.logged-in.sticky-menu .widgettitle {
+	margin-bottom: 1em;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	widget style
+/* -------------------------------------------------------------------------- */
+
+body.logged-in.sticky-menu .widget_wcex_favorites_widget ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget li {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	margin-top: .714286em;
+	margin-right: 8%;
+	padding-bottom: .714286em;
+	width: 46%;
+	border-bottom: 1px solid #e0e0e0;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget li:nth-child( even ) {
+	margin-right: 0;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget li:nth-child( n+3 ) {
+	margin-top: 1.4286em;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget .thumimg {
+	width: 20%;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget .thumimg + .thumtitle {
+	width: 75%;
+}
+body.logged-in.sticky-menu .widget_wcex_favorites_widget .thumtitle_without_img {
+	width: 100%;
+}

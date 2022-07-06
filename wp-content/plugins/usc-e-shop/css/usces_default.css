@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+input.hidden {
+	display: none;
+}
+.welcart-btn {
+	font-size: 14px;
+    width: 60%;
+    margin-bottom: .357143em;
+    padding: .714286em 1.42857em;
+    background-color: #eee;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.welcart-btn.orange{
+	color: #fff;
+	background-color: #ff8c00;
+}
